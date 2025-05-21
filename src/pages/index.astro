@@ -1,11 +1,29 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Template1 from '../components/Template1.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "Receita Natural para Emagrecer";
+const content = `
+  <p>Descubra como emagrecer de forma natural e saudável com esta receita simples e eficaz.</p>
+  
+  <p>Muitas pessoas sofrem com problemas de peso e buscam soluções rápidas e milagrosas. No entanto, a melhor abordagem é sempre através de métodos naturais e sustentáveis.</p>
+  
+  <p>Nossa receita foi desenvolvida por especialistas em nutrição e tem ajudado milhares de pessoas a alcançarem seus objetivos de peso de forma saudável.</p>
+  
+  <p>Os ingredientes são facilmente encontrados em qualquer supermercado e o preparo é simples e rápido.</p>
+  
+  <p>Clique no botão abaixo para assistir ao vídeo completo e descobrir todos os detalhes desta receita incrível!</p>
+`;
+
+const videoUrl = "https://www.youtube.com/watch?v=example";
+const ctaText = "ASSISTIR AGORA";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title={title}>
+  <Template1
+    title={title}
+    content={content}
+    videoUrl={videoUrl}
+    ctaText={ctaText}
+  />
+</BaseLayout>

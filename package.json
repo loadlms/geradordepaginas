@@ -1,20 +1,23 @@
 {
-  "name": "zapping-zenith",
+  "name": "geradordepaginas",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@faker-js/faker": "^9.8.0",
-    "astro": "^5.7.13",
-    "tinacms": "^2.7.7"
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^6.1.2",
+    "astro": "^4.0.0",
+    "tailwindcss": "^3.3.0",
+    "tinacms": "^1.5.0"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.9.7",
-    "@types/node": "^22.15.21"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   }
 }

@@ -1,5 +1,6 @@
 # build output
 dist/
+.output/
 
 # generated types
 .astro/
@@ -23,4 +24,11 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-node_modules
+# TinaCMS
+.tina/
+tina/__generated__/
+
+# IDE
+.vscode/
+*.swp
+*.swo

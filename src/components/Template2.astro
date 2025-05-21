@@ -1,0 +1,97 @@
+---
+interface Props {
+  title: string;
+  content: string;
+  videoUrl: string;
+  ctaText: string;
+  disclaimer: string;
+}
+
+const { title, content, videoUrl, ctaText, disclaimer } = Astro.props;
+---
+
+<main class="flex-1">
+  <!-- Main Content -->
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <div class="text-sm mb-1">Publicidade</div>
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">{title}</h1>
+    
+    <div class="relative aspect-video mb-6 border border-gray-300 rounded-md overflow-hidden">
+      <a href={videoUrl}>
+        <img src="/images/video-placeholder.gif" alt="Placeholder do vídeo" class="w-full">
+      </a>
+    </div>
+
+    <div class="text-center mb-8">
+      <a href={videoUrl} class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-md text-lg">
+        {ctaText}
+      </a>
+    </div>
+
+    <div class="text-left mb-8 markdown-content">
+      <Fragment set:html={content} />
+    </div>
+
+    <div class="text-center mb-8">
+      <a href={videoUrl} id="watch" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-md text-lg">
+        {ctaText}
+      </a>
+    </div>
+  </div>
+
+  <!-- Disclaimer Section -->
+  <div class="bg-gray-100 py-8">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-sm text-gray-600">
+        <Fragment set:html={disclaimer} />
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="border-t border-gray-200 py-4">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="flex flex-wrap justify-center items-center gap-4">
+      <a href="/shipping" class="text-gray-600 hover:text-gray-900">
+        Envio
+      </a>
+      <a href="/contact" class="text-gray-600 hover:text-gray-900">
+        Contato
+      </a>
+      <a href="/privacy-policy" class="text-gray-600 hover:text-gray-900">
+        Política de Privacidade
+      </a>
+      <a href="/terms-of-service" class="text-gray-600 hover:text-gray-900">
+        Termos de Serviço
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .markdown-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  .markdown-content p:last-child {
+    margin-bottom: 0;
+  }
+  .markdown-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2rem 0 1rem;
+  }
+  .markdown-content h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 1.5rem 0 1rem;
+  }
+  .markdown-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .markdown-content li {
+    margin-bottom: 0.5rem;
+  }
+</style> 

@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Template2 from '../components/Template2.astro';
+
+const title = "Este 'Parasita Diabético' está causando picos mortais de glicose em milhões de americanos! (Veja a #1 forma de combatê-lo agora)";
+const content = `
+  <p>Um estudo recente revelou uma descoberta chocante sobre a diabetes tipo 2 que está mudando a forma como os médicos tratam esta condição.</p>
+
+  <h2>O que os médicos descobriram?</h2>
+  <p>Pesquisadores identificaram um parasita específico que está diretamente relacionado aos picos de glicose em pacientes diabéticos. Esta descoberta revolucionária está ajudando milhares de pessoas a controlarem seus níveis de açúcar no sangue de forma natural.</p>
+
+  <h2>Como isso afeta você?</h2>
+  <p>Se você ou alguém que você conhece sofre de diabetes, esta informação pode ser crucial para melhorar a qualidade de vida e reduzir a dependência de medicamentos.</p>
+
+  <h3>Os sintomas incluem:</h3>
+  <ul>
+    <li>Fadiga constante</li>
+    <li>Sede excessiva</li>
+    <li>Vontade frequente de urinar</li>
+    <li>Visão embaçada</li>
+    <li>Dificuldade de cicatrização</li>
+  </ul>
+
+  <p>Clique no botão abaixo para descobrir como combater este parasita e recuperar sua saúde!</p>
+`;
+
+const videoUrl = "https://www.youtube.com/watch?v=example";
+const ctaText = "DESCUBRA AGORA";
+const disclaimer = `
+  <p>Copyright 2025. Todos os direitos reservados.</p>
+  <p>Este site não é parte do site Youtube ou Youtube Inc. Além disso, este site NÃO é endossado pelo Youtube de forma alguma. YOUTUBE é uma marca registrada da YOUTUBE, Inc.</p>
+  <p>Conformidade com a FDA</p>
+  <p>As informações neste site não foram avaliadas pela Food & Drug Administration ou qualquer outro órgão médico. Não pretendemos diagnosticar, tratar, curar ou prevenir qualquer doença. Informações são compartilhadas apenas para fins educacionais. Você deve sempre consultar seu médico antes de agir com base em qualquer conteúdo neste site, especialmente se você estiver grávida, amamentando, tomando medicamentos ou tiver uma condição médica.</p>
+  <p>Os resultados podem variar: os depoimentos não são de forma alguma uma garantia de resultados. Os resultados individuais variarão. Seja genético ou ambiental, deve-se notar que a ingestão de alimentos, taxas de metabolismo e níveis de exercício e esforço físico variam de pessoa para pessoa. Isso significa que os resultados também variarão de pessoa para pessoa.</p>
+  <p>Alguns nomes e informações pessoais neste site foram alterados para proteger a privacidade dos indivíduos. Nenhum resultado individual deve ser visto como típico.</p>
+  <p>Divulgação de Marketing: Este site é um mercado. Como tal, você deve saber que o proprietário tem uma conexão monetária com o produto e serviços anunciados no site. O proprietário recebe pagamento sempre que um lead qualificado é referido, mas isso é tudo.</p>
+  <p>Divulgação de Publicidade: Este site e os produtos e serviços referidos no site são mercados de publicidade. Este site é um anúncio e não uma publicação de notícias. Quaisquer fotografias de pessoas usadas neste site são modelos. O proprietário deste site e dos produtos e serviços referidos neste site apenas fornece um serviço onde os consumidores podem obter e comparar.</p>
+`;
+---
+
+<BaseLayout title={title}>
+  <Template2
+    title={title}
+    content={content}
+    videoUrl={videoUrl}
+    ctaText={ctaText}
+    disclaimer={disclaimer}
+  />
+</BaseLayout> 

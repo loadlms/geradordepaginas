@@ -11,9 +11,9 @@ export default defineConfig({
   branch,
 
   // Get this from tina.io
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  clientId: process.env.TINA_CLIENT_ID || "",
   // Get this from tina.io
-  token: process.env.TINA_TOKEN,
+  token: process.env.TINA_TOKEN || "",
 
   build: {
     outputFolder: "admin",
@@ -21,7 +21,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
+      mediaRoot: "uploads",
       publicFolder: "public",
     },
   },
@@ -29,22 +29,52 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "page",
+        label: "Pages",
+        path: "src/content",
+        format: "md",
         fields: [
           {
             type: "string",
             name: "title",
             label: "Title",
-            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+          },
+          {
+            type: "string",
+            name: "template",
+            label: "Template",
+            options: ["template1", "template2"],
+            required: true,
+          },
+          {
+            type: "string",
+            name: "videoUrl",
+            label: "Video URL",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "ctaText",
+            label: "CTA Text",
             required: true,
           },
           {
             type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
+            name: "content",
+            label: "Content",
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "disclaimer",
+            label: "Disclaimer",
+            required: true,
           },
         ],
       },
