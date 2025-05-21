@@ -41,9 +41,9 @@ geradordepaginas/
 ## Como Usar
 
 1. Instale as dependências:
-```bash
+     ```bash
 npm install
-```
+     ```
 
 2. Configure as variáveis de ambiente:
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
@@ -58,7 +58,7 @@ npm run dev
 ```
 
 4. Acesse o CMS:
-```bash
+     ```bash
 npx tinacms dev -c "npm run dev"
 ```
 
@@ -91,12 +91,12 @@ O layout base está em `src/layouts/BaseLayout.astro` e pode ser modificado para
 ## Build e Deploy
 
 Para criar uma build de produção:
-```bash
-npm run build
-```
+  ```bash
+  npm run build
+  ```
 
 Para visualizar a build localmente:
-```bash
+  ```bash
 npm run preview
 ```
 
