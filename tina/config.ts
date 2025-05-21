@@ -1,19 +1,22 @@
 import { defineConfig } from "tinacms";
+import dotenv from 'dotenv';
 
-// Your hosting provider likely exposes this as an environment variable
-const branch =
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  "main";
+// Carrega as variáveis de ambiente
+dotenv.config();
+
+// Usa um branch fixo para desenvolvimento
+const branch = "dev";
+
+// Verifica se as credenciais estão definidas
+if (!process.env.TINA_CLIENT_ID || !process.env.TINA_TOKEN) {
+  console.error('Erro: TINA_CLIENT_ID e TINA_TOKEN são necessários no arquivo .env');
+  process.exit(1);
+}
 
 export default defineConfig({
   branch,
-
-  // Get this from tina.io
-  clientId: process.env.TINA_CLIENT_ID || "",
-  // Get this from tina.io
-  token: process.env.TINA_TOKEN || "",
+  clientId: process.env.TINA_CLIENT_ID,
+  token: process.env.TINA_TOKEN,
 
   build: {
     outputFolder: "admin",
